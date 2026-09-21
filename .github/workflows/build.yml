@@ -1,0 +1,23 @@
+name: build
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup NDK
+      run: |
+        wget -q https://dl.google.com/android/repository/android-ndk-r27c-linux.zip
+        unzip -q android-ndk-r27c-linux.zip
+        echo "ANDROID_NDK=$(pwd)/android-ndk-r27c" >> $GITHUB_ENV
+    - name: Build ghostlock
+      run: |
+        cd ghostlock
+        make API=35
+        mkdir -p out
+        cp ghostlock out/libghostlock_neo8.so
+        cp src/core/target.h out/target_ghostlock.h
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ghostlock
+        path: out/*
