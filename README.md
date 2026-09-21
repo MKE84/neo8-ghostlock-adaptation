@@ -41,3 +41,12 @@
 
 若你是上述仓库的作者，看到这引用不满意或要求下线，请开 Issue，我会移除对应产物。
 
+
+## `bin/` 二进制产物
+| 文件 | 大小 | md5 | 说明 |
+|---|---|---|---|
+| `bin/boot.img` | 96 MB | `f99884a6…` | Neo8 stock boot (PD2301_A_16.3.16.1.W10.V000L1, kernel 5.10.246)，kallsyms 取值源头 |
+| `bin/preload.so` | 91 KB | `3b84a04f…` | R8 版 preload 载荷（LD_PRELOAD=/data/local/tmp/preload.so /system/bin/id 触发）|
+| `bin/offsets.json` | 0.9 KB | `12c68c1b…` | GhostLock 外挂 offsets（kernelsnitch 全命中这份）|
+
+> boot.img 96 MB 超过 GitHub 建议单文件 50 MB，push 可用（hard limit 100 MB），如遇慢请耐心等待。
