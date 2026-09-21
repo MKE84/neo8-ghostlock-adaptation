@@ -30,14 +30,14 @@
 
 | 上游仓库 | 在本项目里的角色 |
 |---|---|
-| · `joinchchang/ghostlock-oneplus`（JoinChang） · **GhostLock host**（rooted 主要 payload host） | ghostlock 源码逻辑主体 + `run_main_route_threads` / pselect route 的全链路执行 |
-| · `NebuSec/CyberMeowfia` | CVE-2026-43499 漏洞细节原始信息 + IonStack 版本的提权无尽展開 |
-| · `x-spy/CVE-2026-43499-popsicle` | 另一个 CVE-2026-43499 参考实现（drivers/cheese 路线）|
-| · `YuKongA/payload_extract_rs` | OTA payload 解析管线（流式 Range 只拉 boot.img 的方案来源）|
+| `JoinChang/ghostlock-oneplus`（**GhostLock 上游**，主要 payload 载体） | ghostlock 源码逻辑主体 + `run_main_route_threads` / pselect route 的全链路执行 |
+| `NebuSec/CyberMeowfia` | CVE-2026-43499 漏洞细节原始情报 + IonStack 版本实现路线 
+| `x-spy/CVE-2026-43499-popsicle` | 另一个 CVE-2026-43499 参考实现（drivers/cheese 路线）|
+| `YuKongA/payload_extract_rs` | OTA payload 解析管线（流式 Range 只拉 boot.img 的方案来源）|
 | · `vmlinux-to-elf`（martinosevilla）| 从 Neo8 stock boot.img 解出 kallsyms 符号表 176,599 条，供 target.h 48 宏取值 |
 | · `gitee.com/ytngtaoaaa/allroot` | 社区适配流程三阶段框架（boot 采集 → AI 编译 → log 迭代）|
 | · `kinser "CVE-2026-43499 在 iQOO Neo8 上的适配分析报告"` | R9 MM_STRUCT_SZ=0x3C0 / R10 PAGE_MM_STRUCT_SZ / R11`set_pselect_write` 情报源 — **write layer 缺位的最终答案在这里面** |
-| · **月虹提权助手**（каждо世代 .so 包提供了集→ 本项目为它产 Neo8 slot 的第三方适配） | 周 45 个 .so 包规范参考 / com.ghostlock.app 内置 65768B 版本（实测唯一走到 spawn root_child 的版本）|
+| · **月虹提权助手**（社区机型 .so 包体系，本项目为它产 Neo8 第三方 slot） | 45 个机型 .so 包命名/调用规范参考 · com.ghostlock.app 内置 65768B 版本（实测唯一走到 spawn root_child 的版本）|
 
 若你是上述仓库的作者，看到这引用不满意或要求下线，请开 Issue，我会移除对应产物。
 
